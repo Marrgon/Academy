@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE loadFileList
+  SYSTEM "/wt/load/windchillLoad.dtd">
+<loadFileList>
+   <loadFile filename="AcademicPart/AcademyPart_0.xml"/>
+   <loadFile filename="AcademicPart/AcademyPart_1.xml"/>
+</loadFileList>

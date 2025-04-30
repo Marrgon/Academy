@@ -1,0 +1,35 @@
+<component name="SampleProject" organisation="PTC" description="SampleProject implements the processing process." homepage="https://ssp.ptc.com/wiki/display/bif/BIF+Home" COTS="false"
+xmlns="http://ssp.ptc.com"	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"	xsi:schemaLocation="http://ssp.ptc.com component.xsd">
+	
+	<version major="1" minor="0" point="0" trivial="0" buildCode="0"/>
+	<windchill release="13.0" dateCode="C010" installSequence="0"/>
+
+	<install>  
+		 <!-- Xconf Example -->
+		 <xconf mode="site" file="windchillconfigurator.xconf" option="DEV" force="true"/>
+		 <xconf mode="site" file="shared.xconf" option="DEV" force="true"/>
+		 <xconf mode="undefine" property="wt.pom.dbConnectionPropertiesNameList" option="DEV"/>
+         <xconf mode="undefine" property="wt.pom.dbConnectionPropertiesValueList" option="DEV"/>
+
+		 <!-- SQL Load Example -->
+		 <sqlload sqlpath="remove_ChangeOrder_default_search_view" option="DEV"/>
+
+         <!-- LoadFiles Example -->
+         <variable type="text" caption="Enter the Site Administrator user name" name="site-admin-user-name" default="wcadmin"/>
+         <variable type="password" caption="Enter the Site Administrators password" name="site-admin-secret" default="wcadmin"/>
+		 
+		 <load file="Organization/creatuser.xml" username="${site-admin-user-name}" password="${site-admin-secret}" containerPath="/"/>
+		 <load file="Organization/createorg.xml" username="${site-admin-user-name}" password="${site-admin-secret}" containerPath="/"/>
+		 <load file="AcademicPart/AcademyPart_LoadSet.xml" username="${site-admin-user-name}" password="${site-admin-secret}" containerPath="/"/>
+		 <load file="AcademicDocument/AcademyDocument_LoadSet.xml" username="${site-admin-user-name}" password="${site-admin-secret}" containerPath="/"/>
+		 
+	</install>
+	 
+	<!-- Extension Example -->
+	<extension> 
+      <postDeploy>
+      <ant antfile="extension/newfeature.xml" target="clearCaches" inheritRefs="true"/>
+    </postDeploy>
+  </extension>
+  
+</component>
