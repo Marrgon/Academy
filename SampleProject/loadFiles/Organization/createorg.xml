@@ -1,0 +1,18 @@
+<?xml version="1.0" ?><!DOCTYPE NmLoader SYSTEM "standardX20.dtd">
+<NmLoader>
+<csvOrgContainer handler="wt.inf.container.LoadContainer.createOrgContainer" >
+    <csvcontainerName>Academy_Organization</csvcontainerName>
+    <csvcontainerTemplateRef>General</csvcontainerTemplateRef>
+    <csvbusinessNamespace>TRUE</csvbusinessNamespace>
+    <csvsharingEnabled>TRUE</csvsharingEnabled>
+    <csvcreator></csvcreator>
+    <csvowner></csvowner>
+    <csvsubscriber>TRUE</csvsubscriber>
+    <csvconferencingURL></csvconferencingURL>
+    <csvdescription>Academy_Organization</csvdescription>
+    <csvinternetDomain></csvinternetDomain>
+    <csvOrganizationAddress></csvOrganizationAddress>
+    <csvconferencingID></csvconferencingID>
+    <csvrestrictedDirectorySearchScope></csvrestrictedDirectorySearchScope>
+</csvOrgContainer>
+</NmLoader>
